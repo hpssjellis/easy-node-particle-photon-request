@@ -1,4 +1,4 @@
-# esay-node-particle-request
+# easy-node-particle-request
 
 
 As a gitpod load
