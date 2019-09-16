@@ -17,3 +17,8 @@ run these commands.
 
 
 ```npm start```
+
+
+
+
+To run the index.html async fetch await webpage version of the code. In gitpod click the Open Source button in the top right just above the main window.
