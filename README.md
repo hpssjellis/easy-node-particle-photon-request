@@ -13,7 +13,7 @@ You must change the app.js code for your particle ID and Particle Access Token
 
 run these commands.
 
-``npm install```
+```npm install```
 
 
 ```npm start```
