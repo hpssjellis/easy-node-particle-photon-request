@@ -31,3 +31,9 @@ To run in a web browser using local storage for the Particle ID and access token
 ```apachectl start```
 
 the expose a port and open the browser or preview
+
+or just run this url
+
+https://hpssjellis.github.io/easy-node-particle-photon-request/public/index.html
+
+
