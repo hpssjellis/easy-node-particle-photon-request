@@ -9,9 +9,14 @@ https://gitpod.io/#github.com/hpssjellis/easy-node-particle-photon-request
 
 The .ino must be flashed to your particle.
 
-You must change the app.js code for your particle ID and Particle Access Token
 
-run these commands.
+From the terminal this curl command should work once you replace the photon ID and access Token
+
+```curl https://api.particle.io/v1/devices/f1234f1234/doAll -d access_token=c43212c4321c4321 -d arg=toggleLED```
+
+To run as a node js program you must change the app.js code for your particle ID and Particle Access Token
+
+Then run these commands:
 
 ```npm install```
 
@@ -21,4 +26,8 @@ run these commands.
 
 
 
-To run the index.html async fetch await webpage version of the code. In gitpod click the Open Source button in the top right just above the main window.
+To run in a web browser using local storage for the Particle ID and access token 
+
+```apachectl start```
+
+the expose a port and open the browser or preview
