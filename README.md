@@ -7,7 +7,7 @@ As a gitpod load
 https://gitpod.io/#github.com/hpssjellis/easy-node-particle-photon-request
 
 
-The .ino must be flashed to your particle.
+The .ino must be flashed to your particle photon.
 
 
 From the terminal this curl command should work once you replace the photon ID and access Token
