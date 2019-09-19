@@ -8,7 +8,7 @@ var options = {
     method: "POST",
     form: {
         access_token:"c43212c4321c4321",    // you gotta enter this
-        arg:"SpecialStuff"
+        arg:"toggleLED"
     }
 };
 
