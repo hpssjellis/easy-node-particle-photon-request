@@ -1,0 +1,48 @@
+<body onload="{
+   myStorage1 = localStorage.getItem('myStoredText1')
+   if(myStorage1  != null){
+      document.getElementById('myToken').value = myStorage1
+    }
+    myStorage2 = localStorage.getItem('myStoredText2')
+    if(myStorage2  != null){
+       document.getElementById('myDeviceId').value = myStorage2
+    }
+}">
+
+Device ID:        <input id="myDeviceId"  type=password size=50 placeholder="777777777777777777777"><br>
+Function to run:  <input id="myFunctionName" type=text  value="doAll" ><br>
+
+Access Token:     <input id="myToken"  type=password size=50 placeholder="fc7777777777777777777777777777777777"><br>
+Parameter to send:<input id="myParameter"  type=text value="toggleLED"><br>
+
+
+<input type="button" value="Store Spark Token and ID locally!" onClick="{
+   localStorage.setItem('myStoredText1', document.getElementById('myToken').value)
+   localStorage.setItem('myStoredText2', document.getElementById('myDeviceId').value)
+   alert('Particle Device ID: ' +document.getElementById('myDeviceId').value +'\nAccess Token: '+
+          document.getElementById('myToken').value +  ' \nHave been stored')
+}"><br><br>
+
+
+<input type="button" value="Do Photon" onclick="{
+
+(async function () {
+
+let myUrl = 'https://api.particle.io/v1/devices/' +
+      document.getElementById('myDeviceId').value + '/' + document.getElementById('myFunctionName').value
+
+let myConfig = {
+	'headers' : {'Content-Type' :'application/x-www-form-urlencoded'},
+	'method' : 'POST',
+    'body' : 'args='  + document.getElementById('myParameter').value + '&access_token=' + document.getElementById('myToken').value
+}
+
+      const myResponse = await fetch(myUrl, myConfig)
+      document.getElementById('myDiv01').innerHTML = await myResponse.text()
+  })()   // end of inline async function
+
+}">
+
+<div id="myDiv01">...</div>
+
+
