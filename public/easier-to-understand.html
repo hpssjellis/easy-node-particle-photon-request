@@ -1,0 +1,29 @@
+<script>
+
+let myId = "7777777777777777777777"
+let myFunction = "doAll"
+let myAccessToken = "cfe12f77777777777777777777777777777"
+let myParameter = "toggleLED"
+
+let particleApi = "https://api.particle.io/v1/devices"
+let myUrl = particleApi + "/" + myId + "/" + myFunction
+
+let myConfig = {
+	'headers' : {'Content-Type' :'application/x-www-form-urlencoded'},
+	'method' : 'POST',
+    'body' : 'args='  + encodeURI(myParameter) + '&access_token=' + encodeURI(myAccessToken)
+}
+
+</script>
+
+<input type="button" value="inline" onclick="{
+
+  (async function () {
+      const myResponse = await fetch(myUrl, myConfig)
+      document.getElementById('myDiv01').innerHTML = await myResponse.text()
+  })()   // end of inline async function
+
+}">
+
+<div id="myDiv01">...</div>
+
